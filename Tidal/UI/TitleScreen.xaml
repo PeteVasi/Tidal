@@ -1,0 +1,77 @@
+﻿<!-- /////////////////////////////////////////////////////////////////////////
+// Copyright (c) 2013, Pete Vasiliauskas<pete@nofailgames.com>
+//
+// Permission to use, copy, modify, and/or distribute this software for any
+// purpose with or without fee is hereby granted, provided that the above
+// copyright notice and this permission notice appear in all copies.
+//
+// THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+// WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+// MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+// SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+// WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+// ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+// IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+////////////////////////////////////////////////////////////////////////// -->
+
+<UserControl x:Class="Tidal.UI.TitleScreen"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="700" Height="500" x:Name="TitleScreenControl" Loaded="TitleScreenControl_Loaded" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+	<Canvas x:Name="LayoutRoot">
+		<Canvas.Background>
+            <ImageBrush ImageSource="../images/kanagawaclip.jpg" />
+		</Canvas.Background>
+        <Button Width="80" Height="25" Content="Easy" x:Name="EasyButton" Click="EasyButton_Click" Canvas.Top="190" Canvas.Left="440"/>
+        <Button Height="25" Width="80" Content="Medium" x:Name="MediumButton" Click="MediumButton_Click" Canvas.Top="230" Canvas.Left="460"/>
+        <Button Height="25" Width="80" Content="Hard" x:Name="HardButton" Click="HardButton_Click" Canvas.Top="270" Canvas.Left="480"/>
+    </Canvas>
+</UserControl>
+
+
+
+<!--
+		<TextBlock Text="Passing Folly" Foreground="#FF404040" Opacity="0.66" Canvas.Left="178.985" Canvas.Top="98" FontFamily="Verdana" FontSize="48" FontStyle="Normal" FontWeight="Bold"/>
+		<TextBlock Text="Passing Folly" FontFamily="Verdana" FontSize="48" FontStyle="Normal" FontWeight="Bold" Canvas.Left="174.985" Canvas.Top="96">
+			<TextBlock.Foreground>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FFFFFFFF"/>
+					<GradientStop Color="#FFAEACAC" Offset="1"/>
+				</LinearGradientBrush>
+			</TextBlock.Foreground>
+		</TextBlock>
+		<Grid Height="145" Width="352.992" Canvas.Left="178.985" Canvas.Top="247">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="0.2*"/>
+				<RowDefinition Height="0.2*"/>
+				<RowDefinition Height="0.2*"/>
+				<RowDefinition Height="0.2*"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.3*"/>
+				<ColumnDefinition Width="0.2*"/>
+				<ColumnDefinition Width="0.2*"/>
+				<ColumnDefinition Width="0.3*"/>
+			</Grid.ColumnDefinitions>
+			<TextBlock Text="Play" x:Name="LabelPlay" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Verdana" Foreground="#FFFFFFFF" TextAlignment="Center" Grid.Column="0"/>
+			<Button Width="80" Height="25" Content="Easy" x:Name="EasyButton" Click="EasyButton_Click" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" />
+			<Button Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Content="Medium" Grid.Row="2" x:Name="MediumButton" Grid.Column="0" Click="MediumButton_Click" />
+			<Button Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Content="Hard" Grid.Row="3" x:Name="HardButton" Grid.Column="0" Click="HardButton_Click" />
+
+			<TextBlock Text="Win" x:Name="LabelWin" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Verdana" Foreground="#FFFFFFFF" TextAlignment="Center" Grid.Column="1"/>
+			<TextBlock Text="Loss" x:Name="LabelLoss" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Verdana" Foreground="#FFFFFFFF" TextAlignment="Center" Grid.Column="2"/>
+			<TextBlock Text="Win Streak" x:Name="LabelWinStreak" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Verdana" Foreground="#FFFFFFFF" TextAlignment="Center" Grid.Column="3"/>
+
+			<TextBlock Text="0" x:Name="EasyWins" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Trebuchet MS" Foreground="#FFE7F48F" TextAlignment="Center" FontWeight="Bold" Grid.Row="1" Grid.Column="1"/>
+			<TextBlock Text="0" x:Name="EasyLosses" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Trebuchet MS" Foreground="#FFE7F48F" TextAlignment="Center" FontWeight="Bold" Grid.Row="1" Grid.Column="2"/>
+			<TextBlock Text="0" x:Name="EasyStreak" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Trebuchet MS" Foreground="#FFE7F48F" TextAlignment="Center" FontWeight="Bold" Grid.Row="1" Grid.Column="3"/>
+
+			<TextBlock Text="0" x:Name="MediumWins" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Trebuchet MS" Foreground="#FFE7F48F" TextAlignment="Center" FontWeight="Bold" Grid.Row="2" Grid.Column="1"/>
+			<TextBlock Text="0" x:Name="MediumLosses" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Trebuchet MS" Foreground="#FFE7F48F" TextAlignment="Center" FontWeight="Bold" Grid.Row="2" Grid.Column="2"/>
+			<TextBlock Text="0" x:Name="MediumStreak" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Trebuchet MS" Foreground="#FFE7F48F" TextAlignment="Center" FontWeight="Bold" Grid.Row="2" Grid.Column="3"/>
+
+			<TextBlock Text="0" x:Name="HardWins" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Trebuchet MS" Foreground="#FFE7F48F" TextAlignment="Center" FontWeight="Bold" Grid.Row="3" Grid.Column="1"/>
+			<TextBlock Text="0" x:Name="HardLosses" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Trebuchet MS" Foreground="#FFE7F48F" TextAlignment="Center" FontWeight="Bold" Grid.Row="3" Grid.Column="2"/>
+			<TextBlock Text="0" x:Name="HardStreak" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Trebuchet MS" Foreground="#FFE7F48F" TextAlignment="Center" FontWeight="Bold" Grid.Row="3" Grid.Column="3"/>
+		</Grid>
+        -->

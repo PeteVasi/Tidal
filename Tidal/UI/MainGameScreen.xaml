@@ -1,0 +1,40 @@
+﻿<!-- /////////////////////////////////////////////////////////////////////////
+// Copyright (c) 2013, Pete Vasiliauskas<pete@nofailgames.com>
+//
+// Permission to use, copy, modify, and/or distribute this software for any
+// purpose with or without fee is hereby granted, provided that the above
+// copyright notice and this permission notice appear in all copies.
+//
+// THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+// WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+// MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+// SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+// WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+// ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+// IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+////////////////////////////////////////////////////////////////////////// -->
+
+<UserControl x:Class="Tidal.UI.MainGameScreen"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="700" Height="500" x:Name="MainGameControl" Loaded="MainGameControl_Loaded">
+    <Canvas x:Name="GameCanvas" MouseLeave="GameCanvas_MouseLeave" MouseLeftButtonDown="GameCanvas_MouseLeftButtonDown" MouseLeftButtonUp="GameCanvas_MouseLeftButtonUp" MouseMove="GameCanvas_MouseMove">
+        <Rectangle x:Name="BgRect" Height="500" Width="700" Canvas.Left="0" Canvas.Top="0" RadiusX="5" RadiusY="5" Stroke="#FF000000" StrokeThickness="1">
+        	<Rectangle.Fill>
+                <ImageBrush ImageSource="../images/gamebg.jpg" />
+        	</Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="AcceptButton" Canvas.Top="325" Canvas.Left="585" Width="80" Height="25" Content="Accept" Background="#FF04304F" Foreground="#FF313131" Click="AcceptButton_Click"/>
+    	<Button x:Name="TitleButton" Height="25" Width="80" Canvas.Left="8" Canvas.Top="8" Content="Back to Title" Click="TitleButton_Click"/>
+    	<Button x:Name="RedealButton" Height="25" Width="80" Canvas.Left="8" Canvas.Top="38" Content="Redeal" Click="RedealButton_Click"/>
+    	<TextBlock x:Name="StatusText" Text="Loading..." TextWrapping="Wrap" Canvas.Top="149" Canvas.Left="561" Foreground="#FFFFFFFF" FontSize="12" Width="128" Height="153"/>
+    	<TextBlock x:Name="CardsRemaining" Text="0 cards in deck" Height="16" Width="143" Canvas.Left="7" Canvas.Top="483.41" TextWrapping="Wrap" Foreground="#FFFFFFFF" FontSize="10" VerticalAlignment="Bottom" />
+    	<TextBlock x:Name="DifficultyText" Text="Easy" Height="17.22" Width="84" Canvas.Left="559.25" Canvas.Top="480.266" TextWrapping="Wrap" FontSize="12" Foreground="#FFFFFFFF" TextAlignment="Right" VerticalAlignment="Bottom"/>
+    	<Rectangle x:Name="PlayerCardCountBar" Height="13" Width="150" Canvas.Left="275" Canvas.Top="354" Fill="#FF005544" RadiusX="4" RadiusY="10"/>
+    	<Rectangle x:Name="PlayerCardCountBorder" Height="13" Width="150" Canvas.Left="275" Canvas.Top="354" Stroke="#FF000000" RadiusX="4" RadiusY="10"/>
+    	<TextBlock x:Name="PlayerCardCountText" Text="Cards: 0/13" FontSize="10" Height="27" Width="197" Canvas.Left="314" Canvas.Top="353" TextWrapping="Wrap" Foreground="#FFDDDDDD"/>
+    	<Rectangle x:Name="AICardCountBar" Height="13" Width="150" Canvas.Left="275" Canvas.Top="133" Fill="#FF005544" RadiusX="4" RadiusY="10"/>
+    	<Rectangle x:Name="AICardCountBorder" Height="13" Width="150" Canvas.Left="275" Canvas.Top="133" Stroke="#FF000000" RadiusX="4" RadiusY="10"/>
+    	<TextBlock x:Name="AICardCountText" Text="Cards: 0/13" FontSize="10" Height="26" Width="197" Canvas.Left="314" Canvas.Top="132" TextWrapping="Wrap" Foreground="#FFDDDDDD" />
+    </Canvas>
+</UserControl>

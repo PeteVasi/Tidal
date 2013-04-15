@@ -1,0 +1,87 @@
+﻿<!-- /////////////////////////////////////////////////////////////////////////
+// Copyright (c) 2013, Pete Vasiliauskas<pete@nofailgames.com>
+//
+// Permission to use, copy, modify, and/or distribute this software for any
+// purpose with or without fee is hereby granted, provided that the above
+// copyright notice and this permission notice appear in all copies.
+//
+// THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+// WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+// MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+// SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+// WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+// ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+// IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+////////////////////////////////////////////////////////////////////////// -->
+
+<UserControl x:Class="Tidal.UI.HowToPlayControl"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="500" Height="500" x:Name="HowToControl">
+    <Canvas x:Name="HowToCanvas">
+    	<Path x:Name="HowToPlayBg" Fill="#FF000000" Stretch="None" Stroke="#FF000000"
+Data="M0,0
+      L435,0
+	  C475,0 475,0 475,40
+      L475,175
+      C475,195 499,185 499,205
+      L499,295
+	  C499,315 475,305 475,325
+	  L475,460
+	  C475,499 475,499 435,499
+	  L0,499"
+      Opacity="0.75"
+      MouseEnter="HowToPlayBg_MouseEnter" MouseLeave="HowToPlayBg_MouseLeave" MouseLeftButtonDown="HowToPlayBg_MouseLeftButtonDown" MouseLeftButtonUp="HowToPlayBg_MouseLeftButtonUp"/>
+        
+    	<!--
+		Commented out path here in case Blend screws it up for me 
+Data="M0,0
+      L435,0
+	  C475,0 475,0 475,40
+      L475,175
+      C475,195 499,185 499,205
+      L499,295
+	  C499,315 475,305 475,325
+	  L475,460
+	  C475,499 475,499 435,499
+	  L0,499"
+        -->
+
+		<TextBlock Height="25" Width="90" Canvas.Left="441.003" Canvas.Top="238.445" TextWrapping="NoWrap" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" FontSize="15" FontWeight="Bold" Text="How to Play" MouseEnter="HowToPlayBg_MouseEnter" MouseLeave="HowToPlayBg_MouseLeave">
+    		<TextBlock.RenderTransform>
+    			<TransformGroup>
+    				<ScaleTransform/>
+    				<SkewTransform/>
+    				<RotateTransform Angle="90"/>
+    				<TranslateTransform/>
+    			</TransformGroup>
+    		</TextBlock.RenderTransform>
+    	</TextBlock>
+        <TextBlock Foreground="#FFFFFFFF" FontSize="13" Canvas.Left="10" Canvas.Top="10" MouseEnter="HowToPlayBg_MouseEnter" MouseLeave="HowToPlayBg_MouseLeave">
+            Tidal is a two-player set passing game played with a deck of 32 cards.<LineBreak/>
+            You are eliminated if at any time you hold more than thirteen cards in<LineBreak/>
+            your hand.  Both players begin with seven cards in their hand.<LineBreak/>
+            <LineBreak/>
+            During your turn:<LineBreak/>
+            1. Draw a card.  Note that if this your fourteenth card, you lose.<LineBreak/>
+            2. You may choose to pass as many sets of three cards as you like<LineBreak/>
+            to your opponent.  You can do so by dragging the cards from your<LineBreak/>
+            hand to the center table.<LineBreak/>
+            A set of three cards can be any three cards that all have the same<LineBreak/>
+            value, or a set of three cards all in order and of the same suit.<LineBreak/>
+            For example, these are both valid sets:<LineBreak/>
+            <LineBreak/>
+            <LineBreak/>
+            <LineBreak/>
+            3. If you pass cards, your oppenent can choose sets to keep and<LineBreak/>
+            sets to cancel.  For each set that he elects to keep, he must select two<LineBreak/>
+            of the three cards to move to his hand and one card to discard.  For<LineBreak/>
+            each set that he elects to cancel, he must play a fourth card from his<LineBreak/>
+            hand that matches the set of three to cancel.  For example, a fourth<LineBreak/>
+            eight could be used to cancel the above set of eights, like this:
+        </TextBlock>
+        <Image x:Name="ImageSetMatch" Source="../images/howto_setmatch.jpg" Canvas.Left="50" Canvas.Top="242" MouseEnter="HowToPlayBg_MouseEnter" MouseLeave="HowToPlayBg_MouseLeave"/>
+        <Image x:Name="ImageSetRun" Source="../images/howto_setrun.jpg" Canvas.Left="200" Canvas.Top="242" MouseEnter="HowToPlayBg_MouseEnter" MouseLeave="HowToPlayBg_MouseLeave"/>
+        <Image x:Name="ImageSetCancel" Source="../images/howto_setcancel.jpg" Canvas.Left="50" Canvas.Top="410" MouseEnter="HowToPlayBg_MouseEnter" MouseLeave="HowToPlayBg_MouseLeave"/>
+    </Canvas>
+</UserControl>
