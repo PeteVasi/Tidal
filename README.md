@@ -1,7 +1,9 @@
 Tidal
 =====
 
-Tidal is a playing card game written in Silverlight
+Tidal is a playing card game written in Silverlight.
+
+Play the game online here: http://www.nofailgames.com/tidal/
 
 
 Licensing
